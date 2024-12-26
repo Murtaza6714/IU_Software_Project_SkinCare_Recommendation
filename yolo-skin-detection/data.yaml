@@ -1,0 +1,25 @@
+train: train3/images
+val: train3/images
+
+nc: 28
+names: ['A', 'DS', 'C', 'W', 'OP', 'R', 'DL', 'EB', 'DC', 'ST', 'P', 'SB', 'SP', 'UT', 'M', 'PA', 'ML', 'F']
+
+letter_to_attribute:
+  FINELINES: 'F'
+  Dark Spots: 'DS'
+  Acne: 'A'
+  COMEDONE: 'C'
+  Wrinkle: 'W'
+  Open Pores: 'OP'
+  Rashes: 'R'
+  dark lips: 'DL'
+  eye bag: 'EB'
+  dark circle: 'DC'
+  skin_tags: 'ST'
+  pigmentation: 'P'
+  skin bag: 'SB'
+  spot: 'SP'
+  uneven tone: 'UT'
+  mole: 'M'
+  patches: 'PA'
+  melasma: 'ML'

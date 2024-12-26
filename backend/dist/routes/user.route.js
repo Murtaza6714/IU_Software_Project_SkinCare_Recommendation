@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const shared_1 = require("../controllers/shared");
+const user_validator_1 = require("../validators/user.validator");
+const router = (0, express_1.Router)();
+router.post("/save", user_validator_1.saveUserValidator, shared_1.UserController.saveUser);
+router.post("/login", user_validator_1.loginValidator, shared_1.UserController.login);
+router.get("/get-by-id", shared_1.UserController.getUserById);
+router.get("/get", shared_1.UserController.getUserById);
+router.get("/get-question-responses", shared_1.UserController.getUserQuestionDetails);
+router.post("/verify-otp", user_validator_1.verifyOtpValidator, shared_1.UserController.verifyOtp);
+router.post("/send-otp", user_validator_1.sendOtpValidator, shared_1.UserController.sendOtp);
+exports.default = router;

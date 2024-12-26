@@ -1,0 +1,25 @@
+train: train3/images
+val: train3/images
+
+nc: 18
+names: ['F', 'DS', 'A', 'C', 'W', 'OP', 'R', 'DL', 'EB', 'DC', 'ST', 'P', 'SB', 'SP', 'UT', 'M', 'PA', 'ML']
+
+letter_to_attribute:
+  F: 'FINE_LINES'
+  DS: 'DARK_SPOTS'
+  A: 'ACNE'
+  C: 'COMEDONE'
+  W: 'WRINKLES'
+  OP: 'OPEN_PORES'
+  R: 'RASHES'
+  DL: 'DARK_LIPS'
+  EB: 'EYE_BAGS'
+  DC: 'DARK_CIRCLES'
+  ST: 'SKIN_TAG'
+  P: 'PIGMENTATION'
+  SB: 'SKIN_BAG'
+  SP: 'SPOT'
+  UT: 'UNEVEN_TONE'
+  M: 'MOLE'
+  PA: 'PATCHES'
+  ML: 'MELASMA'
