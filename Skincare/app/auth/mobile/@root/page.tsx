@@ -148,22 +148,6 @@ const LoginRootSlotView = () => {
             </Grid>
           </Grid>
         </Box>
-        {/* <Box>
-          <Grid item xs={12}>
-            <Controller
-              name="category"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <select {...field} className="dropdown-input">
-                  <option value="">Select a Category</option>
-                  <option value="Leaf Water">Leaf Water</option>
-                  <option value="Forever Beauty">Forever Beauty</option>
-                </select>
-              )}
-            />
-          </Grid>
-        </Box> */}
         <Box mt={3}>
           <Button
             disabled={isSubmit}

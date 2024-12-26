@@ -1,7 +1,6 @@
 best.pt
-.env
-local_detecttion_server.py
 mapping.txt
 segment.py
 test_script.py
 old_detector_server.py
+.env

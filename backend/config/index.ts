@@ -65,23 +65,14 @@ export const status = {
 
 export const collectionNames = {
   USERS: "users",
-  ADMIN: "admin",
-  USER_RECOMMENDATION_TIMESERIES: "user_recommendation_timeseries",
   QUESTIONS: "questions",
   PRODUCT_RECOMMENDATION: "product_recommendation",
-  APPOINTMENT: "appointment",
   OPTIONS: "options",
-  DIET_PLAN: "diet_plan",
   QUESTION_OPTIONS: "question_options",
   ATTRIBUTES: "attributes",
   PRODUCT_ATTRIBUTES: "product_attributes",
   PRODUCT_CATEGORY: "product_category",
   PRODUCTS: "products",
-  PRODUCT_BUNDLES: "product_bundles",
-  SALON_SERVICES: "salon_services",
-  SALON_SERVICES_ATTRIBUTE: "salon_services_attribute",
-  COSMETIC_SERVICES_ATTRIBUTE: "cosmetic_services_attribute",
-  COSMETIC_SERVICES: "cosmetic_services",
   PRODUCT_CATEGORY_PRODUCTS: "product_category_products"
 }
 
