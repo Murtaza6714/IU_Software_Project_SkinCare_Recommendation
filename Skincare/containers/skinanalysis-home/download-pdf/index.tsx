@@ -13,7 +13,7 @@ import { APP_COLORS } from "@/theme/colors/colors";
 import CoverView from "../pdf/CoverView";
 import RoutineView from "../pdf/RoutineView";
 import SalonServiceView from "../pdf/SalonServiceView";
-import CosmeticsView from "../pdf/CosmeticsView";
+// import CosmeticsView from "../pdf/CosmeticsView";
 import DietView from "../pdf/DietView";
 import TeamView from "../pdf/TeamView";
 import AboutYou from "./AboutYou";
@@ -529,7 +529,6 @@ const DownloadPdf = ({
           </Page>
           <RoutineView fontFamily={defaultFont} />
         <SalonServiceView data={recommendationData?.recommendedSalonServices || []} fontFamily={defaultFont} />
-        <CosmeticsView fontFamily={defaultFont} data={recommendationData?.recommendedCosmeticServices || []} />
           <DietView fontFamily={defaultFont} />
           <TeamView fontFamily={defaultFont} />
         </Document>

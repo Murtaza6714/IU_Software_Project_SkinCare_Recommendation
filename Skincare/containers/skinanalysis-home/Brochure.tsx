@@ -22,7 +22,7 @@ import { APP_COLORS } from "@/theme/colors/colors";
 import LoadingComponent from "@/components/loaders/Loading";
 import RoutineView from "./pdf/RoutineView";
 import SalonServiceView from "./pdf/SalonServiceView";
-import CosmeticsView from "./pdf/CosmeticsView";
+// import CosmeticsView from "./pdf/CosmeticsView";
 import DietView from "./pdf/DietView";
 import TeamView from "./pdf/TeamView";
 import CoverView from "./pdf/CoverView";
@@ -660,10 +660,7 @@ const BrochureView = () => {
                   data={data?.data?.[0]?.recommendedSalonServices || []}
                   fontFamily={defaultFont}
                 />
-                <CosmeticsView
-                  fontFamily={defaultFont}
-                  data={data?.data?.[0]?.recommendedCosmeticServices || []}
-                />
+                
                 <DietView fontFamily={defaultFont} />
                 <TeamView fontFamily={defaultFont} />
               </Document>
