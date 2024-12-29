@@ -24,4 +24,3 @@ __exportStar(require("./product-category-product.edge.model"), exports);
 __exportStar(require("./product-attribute.edge.model"), exports);
 __exportStar(require("./product-category.model"), exports);
 __exportStar(require("./product-recommendation.model"), exports);
-__exportStar(require("./admin.model"), exports);

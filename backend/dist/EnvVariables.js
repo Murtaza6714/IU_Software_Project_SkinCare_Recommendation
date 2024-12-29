@@ -3,12 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = default_1;
 const cli_table_1 = __importDefault(require("cli-table"));
 let tableData = new cli_table_1.default();
 let enviromentVariables = {
     "MONGODB_URL": {
         "message": "Required mongodb url",
-        "optional": false
+        "optional": true
     },
     "ACCESS_TOKEN_SECRET": {
         "message": "Required Access token secret",
@@ -118,4 +119,3 @@ function default_1() {
         success: success
     };
 }
-exports.default = default_1;

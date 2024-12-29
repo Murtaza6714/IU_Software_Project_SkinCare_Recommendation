@@ -5,7 +5,7 @@ let tableData = new table();
 let enviromentVariables: any = {
   "MONGODB_URL": {
     "message": "Required mongodb url",
-    "optional": false
+    "optional": true
   },
   "ACCESS_TOKEN_SECRET": {
     "message": "Required Access token secret",

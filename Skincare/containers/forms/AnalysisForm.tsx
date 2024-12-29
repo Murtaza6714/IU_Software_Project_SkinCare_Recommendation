@@ -145,49 +145,49 @@ const AnalysisForm = () => {
   };
 
   // handle OTP
-  const handleOtp = (data: any) => {
-    verifyOtp({
-      input: getValues("phoneNumber"),
-      action: "otpVerifyLogin",
-      otp: Number(data?.otp),
-    })
-      .then((response: any) => {
-        if (response?.error?.data?.status === "failure") {
-          toast.error(response?.error?.data?.message);
-        } else {
-          toast.success(
-            "Your OTP has been successfully verified. You can now proceed with your request."
-          );
-          router.replace(`${APP_ROUTES.SELFIE}`);
-        }
-      })
-      .catch((error) => {
-        toast.error("Something went to wrong please try again...");
-      });
-  };
+  // const handleOtp = (data: any) => {
+  //   verifyOtp({
+  //     input: getValues("phoneNumber"),
+  //     action: "otpVerifyLogin",
+  //     otp: Number(data?.otp),
+  //   })
+  //     .then((response: any) => {
+  //       if (response?.error?.data?.status === "failure") {
+  //         toast.error(response?.error?.data?.message);
+  //       } else {
+  //         toast.success(
+  //           "Your OTP has been successfully verified. You can now proceed with your request."
+  //         );
+  //         router.replace(`${APP_ROUTES.SELFIE}`);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       toast.error("Something went to wrong please try again...");
+  //     });
+  // };
 
-  //handle resend OTP
-  const handleResentOtp = () => {
-    sendOtp({
-      input: getValues("phoneNumber"),
-      inputType: "phoneNumber",
-      action: "otpVerifyLogin",
-    })
-      .then((response: any) => {
-        if (response?.data?.status === "success") {
-          toast.success(
-            `As requested, a new One-Time Password (OTP) has been sent to your registered phone number ${getValues(
-              "phoneNumber"
-            )}`
-          );
-        } else {
-          toast.error("Something went to wrong please try again...");
-        }
-      })
-      .catch((error) => {
-        toast.error("Something went to wrong please try again...");
-      });
-  };
+  // //handle resend OTP
+  // const handleResentOtp = () => {
+  //   sendOtp({
+  //     input: getValues("phoneNumber"),
+  //     inputType: "phoneNumber",
+  //     action: "otpVerifyLogin",
+  //   })
+  //     .then((response: any) => {
+  //       if (response?.data?.status === "success") {
+  //         toast.success(
+  //           `As requested, a new One-Time Password (OTP) has been sent to your registered phone number ${getValues(
+  //             "phoneNumber"
+  //           )}`
+  //         );
+  //       } else {
+  //         toast.error("Something went to wrong please try again...");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       toast.error("Something went to wrong please try again...");
+  //     });
+  // };
 
   console.log(dataFetchBranches?.data);
 
@@ -197,21 +197,6 @@ const AnalysisForm = () => {
         {isLoading && !isError && !data && <LoadingComponent />}
         {!isLoading && !isError && data && (
           <Fragment>
-            {/* {showOtpForm && (
-              <OtpForm
-                onClickBackButton={() => {
-                  setShowOtpForm(false);
-                }}
-                onClickResendOtp={handleResentOtp}
-                handleSubmit={handleSubmit}
-                onSubmitForm={handleOtp}
-                control={control}
-                sendTo={`${getValues("phoneNumber")} or ${getValues("email")}`}
-                isLoadinResendOtp={false}
-                isVerifyLoading={false}
-                watchChangeLoginType={"phoneNumber or email id"}
-              />
-            )} */}
             {!showOtpForm && (
               <Grid container spacing={2}>
                 {data?.data.map((question: any, index: number) => (

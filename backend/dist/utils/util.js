@@ -12,7 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateDynamicSkinSummary = exports.createEdgeCollectionWithSchema = exports.createCollectionWithSchema = exports.uploadBase64ImageToS3 = exports.generateFileName = exports.getDateTimeForToday = exports.catchError = exports.generateRandom = exports.sendEmail = exports.checkInputError = exports.comparePassword = exports.hashPassword = exports.generateToken = exports.clearImage = exports.ValidateName = exports.ValidateStatus = exports.ValidateDateFormat = exports.paramNotEmpty = exports.queryNotEmpty = exports.bodyNotEmpty = void 0;
+exports.generateDynamicSkinSummary = exports.catchError = exports.generateRandom = exports.sendEmail = exports.checkInputError = exports.comparePassword = exports.hashPassword = exports.generateToken = exports.clearImage = exports.ValidateName = exports.ValidateStatus = exports.ValidateDateFormat = exports.paramNotEmpty = exports.queryNotEmpty = exports.bodyNotEmpty = void 0;
+exports.getDateTimeForToday = getDateTimeForToday;
+exports.generateFileName = generateFileName;
+exports.uploadBase64ImageToS3 = uploadBase64ImageToS3;
+exports.createCollectionWithSchema = createCollectionWithSchema;
+exports.createEdgeCollectionWithSchema = createEdgeCollectionWithSchema;
 const express_validator_1 = require("express-validator");
 const fs_1 = __importDefault(require("fs"));
 const logger_1 = require("./logger");
@@ -152,7 +157,6 @@ function getDateTimeForToday(timezone = "Asia/Kolkata") {
         mongoTimestamp: today.toISO({ includeOffset: true })
     };
 }
-exports.getDateTimeForToday = getDateTimeForToday;
 function generateFileName(fileExtension) {
     // Get current date
     const currentDate = new Date();
@@ -169,7 +173,6 @@ function generateFileName(fileExtension) {
     const fileName = `${year}${month}${day}_${hours}${minutes}${seconds}_${randomNumber}`;
     return `${fileName}.${fileExtension}`;
 }
-exports.generateFileName = generateFileName;
 function uploadBase64ImageToS3(base64String, sessionId) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -186,7 +189,6 @@ function uploadBase64ImageToS3(base64String, sessionId) {
         }
     });
 }
-exports.uploadBase64ImageToS3 = uploadBase64ImageToS3;
 function createCollectionWithSchema(collectionName, schema) {
     return __awaiter(this, void 0, void 0, function* () {
         const collection = database_1.arangoDb.collection(collectionName);
@@ -200,7 +202,6 @@ function createCollectionWithSchema(collectionName, schema) {
         }
     });
 }
-exports.createCollectionWithSchema = createCollectionWithSchema;
 function createEdgeCollectionWithSchema(collectionName, schema) {
     return __awaiter(this, void 0, void 0, function* () {
         const collection = database_1.arangoDb.collection(collectionName);
@@ -214,7 +215,6 @@ function createEdgeCollectionWithSchema(collectionName, schema) {
         }
     });
 }
-exports.createEdgeCollectionWithSchema = createEdgeCollectionWithSchema;
 const generateDynamicSkinSummary = (inputAttributes) => {
     // const inputSet = new Set(inputAttributes.map(attr => attr.toUpperCase()));
     const inputSet = inputAttributes;

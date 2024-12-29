@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = default_1;
 function default_1(req, res, next) {
     req.pageNo = (req.query.page && Number(req.query.page) > 0)
         ? Number(req.query.page) : 1;
@@ -12,4 +13,3 @@ function default_1(req, res, next) {
     next();
     return;
 }
-exports.default = default_1;

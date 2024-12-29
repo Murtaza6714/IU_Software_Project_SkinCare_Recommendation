@@ -161,11 +161,7 @@ const ProductsView = ({ data, isAdminView = false }: ProductsViewProps) => {
                             minWidth={300}
                             {...product}
                             enabledMask={
-                              isAdminView
-                              ? false
-                              : data?.data?.user?.isPremiumCustomer
-                                ? false
-                                : index > 0
+                              false
                             }
                           />
                         )
