@@ -34,11 +34,13 @@ import os
 import platform
 import sys
 from pathlib import Path
+import platform
 
 #remove if linux
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+if platform.system() == "Windows":
+    temp = pathlib.PosixPath
+    pathlib.PosixPath = pathlib.WindowsPath
 
 import torch
 

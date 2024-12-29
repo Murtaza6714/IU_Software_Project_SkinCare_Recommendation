@@ -9,6 +9,7 @@ import yaml
 from flask import Flask, request, jsonify
 import time
 import uuid
+import platform
 
 app = Flask(__name__)
 current_directory = os.getcwd()
@@ -145,7 +146,10 @@ def detect():
 
         # Run detection
         try:
-            command = f'python {DETECT_SCRIPT} --weights {WEIGHTS_PATH} --source {stitched_image_path} --save-txt --save-conf --hide-conf --data {DATA_YAML_PATH}'
+            if platform.system() == "Linux":
+                command = f'python3 {DETECT_SCRIPT} --weights {WEIGHTS_PATH} --source {stitched_image_path} --save-txt --save-conf --hide-conf --data {DATA_YAML_PATH}'
+            else:
+                command = f'python {DETECT_SCRIPT} --weights {WEIGHTS_PATH} --source {stitched_image_path} --save-txt --save-conf --hide-conf --data {DATA_YAML_PATH}'
             result = subprocess.run(command, shell=True, capture_output=True, text=True)
         except Exception as e:
             return jsonify({'error': 'Please retake clear and closer image of face', 'details': str(e)}), 400
