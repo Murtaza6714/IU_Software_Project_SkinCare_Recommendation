@@ -96,7 +96,7 @@ The project utilizes a YOLO model for skin detection. Here's how to set it up:
     ```
     This will start the local server for skin detection using the YOLO model.
 
-## Project Structure (Optional)
+## Project Structure
 skin-care-analysis/
 ├── Skincare/        # Frontend directory (e.g., React, Vue.js)
 │   ├── public/
