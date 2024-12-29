@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+# For React Next js FrontEnd server setup
+  frontend:
+    build:
+      context: ./Skincare
+      dockerfile: Dockerfile 
+    ports:
+      - "3000:3000" 
+    volumes:
+      - ./Skincare:/app
+      - /app/node_modules 
+    environment:
+      - NODE_ENV=development 
+    command: npm run dev
+
+# For node backend server setup
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile 
+    ports:
+      - "5000:5000" 
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production 
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+# For python backend yolo server setup
+  yolo:
+    build:
+      context: ./yolo-skin-detection
+      dockerfile: Dockerfile 
+    ports:
+      - "8000:8000" 
+    volumes:
+      - ./yolo-skin-detection:/app
+    command: python local_detection_server.py
+    
+# For redis server Setup
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+        - redis-data:/data
+
+volumes:
+  redis-data:
