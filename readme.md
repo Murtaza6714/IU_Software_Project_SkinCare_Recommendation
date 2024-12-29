@@ -99,7 +99,6 @@ The project utilizes a YOLO model for skin detection. Here's how to set it up:
 ## Project Structure
 IU Project Skincare/ <br>
 ├── Skincare/          # Frontend directory (e.g., React) <br>
-│   ├── public/ <br>
 │   ├── src/ <br>
 │   └── ... <br>
 ├── backend/           # Backend directory (Node.js) <br>
