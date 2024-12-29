@@ -97,16 +97,16 @@ The project utilizes a YOLO model for skin detection. Here's how to set it up:
     This will start the local server for skin detection using the YOLO model.
 
 ## Project Structure
-skin-care-analysis/
-├── Skincare/        # Frontend directory (e.g., React, Vue.js)
+IU Project Skincare/
+├── Skincare/          # Frontend directory (e.g., React)
 │   ├── public/
 │   ├── src/
-│   ├── ...
-├── backend/         # Backend directory (Node.js)
-├── yolo-skin-detection/ # YOLO model and detection server
+│   └── ...
+├── backend/           # Backend directory (Node.js)
+├── yolo-skin-detection/  # YOLO model and detection server (Flask Server)
 │   ├── requirements.txt
 │   ├── getmodel.py
 │   ├── local_detection_server.py
-│   ├── ...
+│   └── ...
 ├── ...
-├── README.md
+└── README.md
