@@ -23,7 +23,7 @@ import { useVerifyOtpMutation, useSendOtpMutation } from "@/redux/api/authApi";
 import { parsePhoneNumber } from "libphonenumber-js";
 import { toast } from "react-toastify";
 import { signIn } from "next-auth/react";
-import OtpForm from "../forms/OtpForm";
+// import OtpForm from "../forms/OtpForm";
 import { grey } from "@mui/material/colors";
 import { useFetchLatestRecommendationsByFilterMutation } from "@/redux/api/analysisApi";
 
@@ -109,7 +109,6 @@ const HomeLanding = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const theme = useTheme();
   const [sendTo, setSendTo] = useState<string | null>(null);
-  const [isGetReport, setIsGetReport] = useState<boolean>(false);
 
   const isSmDevice = useMediaQuery(theme.breakpoints.up("lg"));
   const { control, handleSubmit, watch } = useForm({
@@ -227,7 +226,7 @@ const HomeLanding = () => {
 
       <Box className="overly_layer">
         <Box component="div" className="centered_box">
-          {sendTo && (
+          {/* {sendTo && (
             <OtpForm
               onClickBackButton={() => {
                 setSendTo(null);
@@ -243,7 +242,7 @@ const HomeLanding = () => {
               isVerifyLoading={isLoadingVerifyOtp || isLoadingLatestRecByFilter}
               watchChangeLoginType={watchChangeLoginType}
             />
-          )}
+          )} */}
           {!sendTo && (
             <Grid
               container
@@ -259,14 +258,13 @@ const HomeLanding = () => {
               </Grid>
               <Grid item xs={12}>
                 <Typography color="secondary" fontWeight={900} variant="h5">
-                  Personalized <span className="__span">Skincare</span>
+                Tailored <span className="__span">Skincare</span>
                 </Typography>
                 <Typography mb={2} variant="body2">
-                  Recommendations based on analysis results.
+                Suggested actions based on the findings of the analysis.
                 </Typography>
               </Grid>
 
-              {!isGetReport && (
                 <Fragment>
                   <Grid item xs={12}>
                     <Button
@@ -283,7 +281,6 @@ const HomeLanding = () => {
                     </Button>
                   </Grid>
                 </Fragment>
-              )}
             </Grid>
           )}
         </Box>

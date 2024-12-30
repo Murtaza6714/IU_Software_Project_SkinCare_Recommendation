@@ -20,13 +20,13 @@ import { useSession } from "next-auth/react";
 import React, { Fragment, useEffect } from "react";
 import { APP_COLORS } from "@/theme/colors/colors";
 import LoadingComponent from "@/components/loaders/Loading";
-import RoutineView from "./pdf/RoutineView";
-import SalonServiceView from "./pdf/SalonServiceView";
-// import CosmeticsView from "./pdf/CosmeticsView";
-import DietView from "./pdf/DietView";
-import TeamView from "./pdf/TeamView";
-import CoverView from "./pdf/CoverView";
-import AboutYou from "./pdf/AboutYou";
+// import RoutineView from "./pdf/RoutineView";
+// import SalonServiceView from "./pdf/SalonServiceView";
+// // import CosmeticsView from "./pdf/CosmeticsView";
+// import DietView from "./pdf/DietView";
+// import TeamView from "./pdf/TeamView";
+// import CoverView from "./pdf/CoverView";
+// import AboutYou from "./pdf/AboutYou";
 import { Session } from "next-auth";
 import { capitalizeWords } from "@/utils/func";
 
@@ -255,13 +255,13 @@ const BrochureView = () => {
           <PDFDownloadLink
             document={
               <Document>
-                <CoverView fontFamily={defaultFont} />
-                <AboutYou
+                {/* <CoverView fontFamily={defaultFont} /> */}
+                {/* <AboutYou
                   dataImageInfo={dataImageInfo}
                   fontFamily={defaultFont}
                   dataFUQR={dataFUQR}
                   session={session as Session}
-                />
+                /> */}
                 <Page size="A4" style={{ ...styles.page }}>
                   <View
                     style={{
@@ -655,14 +655,14 @@ const BrochureView = () => {
                     </Fragment>
                   )}
                 </Page>
-                <RoutineView fontFamily={defaultFont} />
+                {/* <RoutineView fontFamily={defaultFont} />
                 <SalonServiceView
                   data={data?.data?.[0]?.recommendedSalonServices || []}
                   fontFamily={defaultFont}
                 />
                 
                 <DietView fontFamily={defaultFont} />
-                <TeamView fontFamily={defaultFont} />
+                <TeamView fontFamily={defaultFont} /> */}
               </Document>
             }
             fileName={`${session?.user?.firstName}.pdf`}

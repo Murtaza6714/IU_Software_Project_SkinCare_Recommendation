@@ -23,7 +23,6 @@ const fs_1 = __importDefault(require("fs"));
 const shared_route_1 = __importDefault(require("./routes/shared.route"));
 const question_route_1 = __importDefault(require("./routes/question.route"));
 const user_route_1 = __importDefault(require("./routes/user.route"));
-const product_route_1 = __importDefault(require("./routes/product.route"));
 const attribute_route_1 = __importDefault(require("./routes/attribute.route"));
 const logger_1 = require("./utils/logger");
 // import "./Config/Db-association"
@@ -85,7 +84,6 @@ exports.app.use(pagination_1.default);
 exports.app.use("", shared_route_1.default);
 exports.app.use("/question", question_route_1.default);
 exports.app.use("/user", user_route_1.default);
-exports.app.use("/product", product_route_1.default);
 exports.app.use("/attribute", attribute_route_1.default);
 // globalThis.rabbitMqChannel.consume(helpers.queues.TRANSCRIPTION_RESULT_QUEUE, (msg: any) => {
 //   // if(!msg.content) reject("No Message Received!!")

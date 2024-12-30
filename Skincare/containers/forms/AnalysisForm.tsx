@@ -20,7 +20,7 @@ import { signIn } from "next-auth/react";
 import { isArray, replace } from "lodash";
 import { useSession } from "next-auth/react";
 import { parsePhoneNumber } from "libphonenumber-js";
-import OtpForm from "./OtpForm";
+// import OtpForm from "./OtpForm";
 import {
   useLazyFetchBranchesQuery,
   useSendOtpMutation,

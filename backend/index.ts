@@ -16,7 +16,6 @@ import fs from 'fs'
 import Shared from "./routes/shared.route";
 import QuestionRoute from "./routes/question.route";
 import UserRoute from "./routes/user.route";
-import ProductRoute from "./routes/product.route";
 import AttributeRoute from "./routes/attribute.route";
 import { logger } from "./utils/logger";
 // import "./Config/Db-association"
@@ -88,7 +87,6 @@ app.use(pagination)
 app.use("", Shared);
 app.use("/question", QuestionRoute);
 app.use("/user", UserRoute);
-app.use("/product", ProductRoute);
 app.use("/attribute", AttributeRoute);
 
 // globalThis.rabbitMqChannel.consume(helpers.queues.TRANSCRIPTION_RESULT_QUEUE, (msg: any) => {

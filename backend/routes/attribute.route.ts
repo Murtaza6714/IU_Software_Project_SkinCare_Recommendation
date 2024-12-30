@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { AttributeController, ProductController, QuestionController } from "../controllers/shared"
-import { getProductByFilterValidator } from "../validators/product.validator";
+import { AttributeController } from "../controllers/shared"
 const router: Router = Router();
 
 

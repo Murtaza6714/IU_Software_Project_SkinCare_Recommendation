@@ -20,14 +20,9 @@ import React, { Fragment, useEffect, useRef } from "react";
 import { APP_COLORS } from "@/theme/colors/colors";
 import LoadingComponent from "@/components/loaders/Loading";
 import { Icon } from "@iconify/react";
-import SalonServices from "./Recommendations/SalonServices";
-import DietChart from "./Recommendations/DietChart";
-import MeetTeam from "./Recommendations/MeetTeam";
-import Routine from "./Recommendations/Routines";
 import CoverPage from "./Recommendations/Cover";
 import UserInfo from "./Recommendations/UserInfo";
 import PreventingView from "./Recommendations/Preventing";
-import CosmeticRecommdations from "./Recommendations/CosmeticRecommdations";
 import ProductsView from "./Recommendations/Products";
 
 const defaultFont = "Roboto";
@@ -181,23 +176,13 @@ const SkinAnalysisRecommendation = () => {
       maxWidth={false}
       className="block"
     >
+      <input type="hidden" />
       {!isLoading && data && !isLoadingImageInfo && (
         <Fragment>
           <CoverPage />
           <UserInfo useData={dataImageInfo} dataFUQR={dataFUQR} />
           <PreventingView useData={dataImageInfo} data={data} />
           <ProductsView data={data} />
-          <Routine />
-          <SalonServices
-            data={data?.data?.[0]?.recommendedSalonServices || []}
-          />
-          <CosmeticRecommdations
-            data={data?.data?.[0]?.recommendedCosmeticServices || []}
-          />
-          {data?.data?.[0]?.dietPlan?._id && (
-            <DietChart data={data?.data?.[0]?.dietPlan} />
-          )}
-          <MeetTeam />
         </Fragment>
       )}
       {(isLoadingImageInfo || (isLoading && !data)) && (
@@ -215,7 +200,7 @@ const SkinAnalysisRecommendation = () => {
       </Paper>
       <Paper
         onClick={handleScrollToTop}
-        component="div"
+        component="div"  
         className="scrool-to-top"
       >
         <Icon icon="solar:round-arrow-up-outline" />

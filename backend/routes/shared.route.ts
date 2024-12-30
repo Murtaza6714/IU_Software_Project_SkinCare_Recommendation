@@ -9,7 +9,6 @@ router.post("/recommend-product", SharedController.recommendProduct);
 router.post("/recommend-skin-care", SharedController.recommendSkinCare);
 router.get("/fetch-recommendations", SharedController.fetchRecommendations);
 router.get("/fetch-recommendations-by-id", SharedController.fetchRecommendationsById);
-router.get("/fetch-admin-recommendations-by-id", SharedController.fetchAdminRecommendationById);
 router.post("/fetch-latest-recommendation-by-filter",fetchLatestRecommendationByFilterValidator, SharedController.fetchLatestRecommendationByFilter);
 router.post("/get-signed-url-to-put-object", SharedController.getSignedUrl);
 router.post("/get-signed-url-to-view-object", SharedController.getSignedUrlToViewObject);

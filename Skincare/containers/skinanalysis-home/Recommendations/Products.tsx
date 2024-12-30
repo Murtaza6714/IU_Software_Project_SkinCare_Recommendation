@@ -10,7 +10,6 @@ import Container from "@mui/material/Container";
 import { styled } from "@mui/material/styles";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import ProductCard from "./ProductCard";
-import BundleCard from "./BubdleCard";
 import CategoryTabs from "./CategoryTabs";
 import Sticky from "react-sticky-el";
 

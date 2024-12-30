@@ -1,5 +1,4 @@
 export * from "./shared.service"
 export * from "./question.service"
 export * from "./services"
-export * from "./product.service"
 export * from "./attribute.service"

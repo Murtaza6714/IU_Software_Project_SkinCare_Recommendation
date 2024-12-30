@@ -76,15 +76,6 @@ export const fetchLatestRecommendationByFilter = async (req: any, res: any, next
     next(error);
   }
 };
-export const fetchAdminRecommendationById = async (req: any, res: any, next: any) => {
-  try {
-    // checkInputError(req);
-    const response = await SharedService.fetchAdminRecommendationById(req.query);
-    return res.status(response.statusCode).json(response);
-  } catch (error) {
-    next(error);
-  }
-};
 export const fetchRecommendations = async (req: any, res: any, next: any) => {
   try {
     // checkInputError(req);

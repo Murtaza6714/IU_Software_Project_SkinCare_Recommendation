@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchRecommendations = exports.fetchAdminRecommendationById = exports.fetchLatestRecommendationByFilter = exports.fetchRecommendationsById = exports.getSignedUrlToViewObject = exports.getSignedUrl = exports.recommendSkinCare = exports.recommendProduct = exports.getPing = void 0;
+exports.fetchRecommendations = exports.fetchLatestRecommendationByFilter = exports.fetchRecommendationsById = exports.getSignedUrlToViewObject = exports.getSignedUrl = exports.recommendSkinCare = exports.recommendProduct = exports.getPing = void 0;
 const utils_1 = require("../../utils");
 const shared_1 = require("../../service/shared");
 const getPing = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -98,17 +98,6 @@ const fetchLatestRecommendationByFilter = (req, res, next) => __awaiter(void 0, 
     }
 });
 exports.fetchLatestRecommendationByFilter = fetchLatestRecommendationByFilter;
-const fetchAdminRecommendationById = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        // checkInputError(req);
-        const response = yield shared_1.SharedService.fetchAdminRecommendationById(req.query);
-        return res.status(response.statusCode).json(response);
-    }
-    catch (error) {
-        next(error);
-    }
-});
-exports.fetchAdminRecommendationById = fetchAdminRecommendationById;
 const fetchRecommendations = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // checkInputError(req);

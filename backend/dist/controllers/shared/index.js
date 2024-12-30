@@ -33,9 +33,8 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttributeController = exports.ProductController = exports.UserController = exports.QuestionController = exports.SharedController = void 0;
+exports.AttributeController = exports.UserController = exports.QuestionController = exports.SharedController = void 0;
 exports.SharedController = __importStar(require("./shared.controller"));
 exports.QuestionController = __importStar(require("./question.controller"));
 exports.UserController = __importStar(require("./user.controller"));
-exports.ProductController = __importStar(require("./product.controller"));
 exports.AttributeController = __importStar(require("./attribute.controller"));

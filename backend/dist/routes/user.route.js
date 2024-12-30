@@ -9,6 +9,4 @@ router.post("/login", user_validator_1.loginValidator, shared_1.UserController.l
 router.get("/get-by-id", shared_1.UserController.getUserById);
 router.get("/get", shared_1.UserController.getUserById);
 router.get("/get-question-responses", shared_1.UserController.getUserQuestionDetails);
-router.post("/verify-otp", user_validator_1.verifyOtpValidator, shared_1.UserController.verifyOtp);
-router.post("/send-otp", user_validator_1.sendOtpValidator, shared_1.UserController.sendOtp);
 exports.default = router;
