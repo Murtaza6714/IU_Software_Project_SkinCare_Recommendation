@@ -69,7 +69,7 @@ class UserServiceClass extends services_1.default {
                     user = createdUser;
                 }
                 utils_2.logger.info('Save user completed for %s', body.phoneNumber);
-                return this.success({ message: "Onboarding questions fetched successfully!!", statusCode: http_status_1.default.ok, data: user });
+                return this.success({ message: "User saved successfully!!", statusCode: http_status_1.default.ok, data: user });
             }
             catch (error) {
                 utils_2.logger.error(`Error in Save user for ${body.phoneNumber}`);

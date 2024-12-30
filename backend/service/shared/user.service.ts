@@ -58,7 +58,7 @@ class UserServiceClass extends Services {
         user = createdUser
       }
       logger.info('Save user completed for %s', body.phoneNumber);
-      return this.success({ message: "Onboarding questions fetched successfully!!", statusCode: HttpStatus.ok, data: user })
+      return this.success({ message: "User saved successfully!!", statusCode: HttpStatus.ok, data: user })
     } catch (error) {
       logger.error(`Error in Save user for ${body.phoneNumber}`);
       throw error
